@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen (Overlay) -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Search Box -->
+    <div id="search-box">
+        <form method="GET" action="">
+            <input type="text" id="u" name="q" placeholder="Search..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Search Results Page -->
+    <div id="search-results" class="hidden">
+        <h1 id="query-title">Web results</h1>
+        <div id="results"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
