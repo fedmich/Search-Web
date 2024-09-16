@@ -1,0 +1,9 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# If the requested file or directory exists, do nothing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, rewrite the URL to index.php, passing the URI as a query parameter
+RewriteRule ^(.*)$ index.php?uri=$1 [L,QSA]
