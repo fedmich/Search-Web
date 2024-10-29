@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Fed Search Engine</ShortName>
+    <Description>Search using the Fed Search Engine</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image height="16" width="16" type="image/x-icon">https://fedmich.com/search/favicon.ico</Image>
+    <Url type="text/html" template="https://fedmich.com/search/?q={searchTerms}"/>
+    <Query role="example" searchTerms="example"/>
+    <Developer>Fedmich</Developer>
+    <Attribution>Search powered by Fed Search Engine</Attribution>
+    <SearchForm>https://fedmich.com/search/</SearchForm>
+</OpenSearchDescription>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Fedmich Search Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a.button:hover {
+            background-color: #1a6a8a;
+        }
+        .status {
+            display: none;
+            padding: 10px;
+            background-color: #e7f4e4;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            margin-bottom: 20px;
+            position: relative;
+            top: 0;
+            transition: all 0.5s ease;
+        }
+    </style>
+    <script>
+        function showStatusMessage(message) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function addSearchEngine() {
+            try {
+                const link = document.createElement('link');
+                link.rel = 'search';
+                link.type = 'application/opensearchdescription+xml';
+                link.href = 'https://fedmich.com/search/opensearch.xml';
+                link.title = 'Fedmich';
+                document.head.appendChild(link);
+                showStatusMessage('Fedmich has been added as your search engine. Check your settings to confirm.');
+            } catch (error) {
+                console.error('Failed to add search engine:', error);
+                showStatusMessage('An error occurred while adding the search engine. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="status" id="status"></div>
+    
+    <h1>Install Fedmich Search Engine</h1>
+    <p>Follow the instructions below to add Fedmich as your default search engine.</p>
+
+    <div class="instructions">
+        <h2>For Google Chrome</h2>
+        <ol>
+            <li>Open Chrome and go to <a href="https://fedmich.com" target="_blank">Fedmich.com</a>.</li>
+            <li>Right-click on the address bar and select <strong>Add as search engine</strong>.</li>
+            <li>Alternatively, you can visit <strong>Settings > Search engine > Manage search engines</strong> and add it manually.</li>
+            <li>Enter the following details:
+                <ul>
+                    <li><strong>Name:</strong> Fedmich</li>
+                    <li><strong>Keyword:</strong> fedmich</li>
+                    <li><strong>URL with %s in place of query:</strong> <code>https://fedmich.com/search?q=%s</code></li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>For Mozilla Firefox</h2>
+        <p>Click the button below to add Fedmich as your search engine:</p>
+        <a href="#" class="button" onclick="addSearchEngine(); return false;">Add Fedmich Search Engine to Firefox</a>
+		
+		<!--
+		        <ol>
+            <li>Open Firefox and navigate to <a href="https://fedmich.com" target="_blank">Fedmich.com</a>.</li>
+            <li>Click the search bar in the top right corner, then click the <strong>magnifying glass</strong> icon.</li>
+            <li>Select <strong>Add Fedmich</strong> from the dropdown.</li>
+            <li>You can also manage your search engines in <strong>Options > Search</strong>.</li>
+        </ol>
+		
+		-->
+    </div>
+
+    <footer>
+        <p>If you have any questions or need assistance, please <a href="mailto:support@fedmich.com">contact us</a>.</p>
+    </footer>
+</body>
+</html>
